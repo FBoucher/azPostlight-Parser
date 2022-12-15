@@ -1,4 +1,4 @@
-const mercury = require('@postlight/mercury-parser');
+const mercury = require('@postlight/parser');
 const uuid = require('uuid');
 
 module.exports = async function (context, req) {
