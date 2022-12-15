@@ -1,13 +1,14 @@
 {
-  "name": "",
+  "name": "azPostlight-Parser",
   "version": "1.0.0",
-  "description": "",
+  "description": "Wrapper of Postlight-Parser in an Azure Function",
   "scripts": {
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "@postlight/parser": "^2.2.3"
+    "@postlight/parser": "^2.2.3",
+    "uuid": "9.0.0"
   },
   "devDependencies": {
     "azure-functions-core-tools": "^4.x"
