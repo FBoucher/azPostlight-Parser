@@ -11,6 +11,11 @@ module.exports = async function (context, req) {
         cleanedPost = await postlight.parse(_url);
         cleanedPost.id = uuid.v4();
 
+        // Add partition key and row key for Azure Table Storage
+        var today = new Date();
+        cleanedPost.PartitionKey = today.getFullYear() + "-" + (today.getMonth() + 1);;
+        cleanedPost.RowKey = cleanedPost.id;
+
         context.res = {
             status: 200, /* Defaults to 200 */
             body: cleanedPost
