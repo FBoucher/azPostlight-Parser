@@ -13,7 +13,7 @@ module.exports = async function (context, req) {
 
         // Add partition key and row key for Azure Table Storage
         var today = new Date();
-        cleanedPost.PartitionKey = today.getFullYear() + "-" + (today.getMonth() + 1);;
+        cleanedPost.PartitionKey = today.toISOString().substring(0, 7);
         cleanedPost.RowKey = cleanedPost.id;
 
         context.res = {
