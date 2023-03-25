@@ -10,6 +10,7 @@ module.exports = async function (context, req) {
         const _url = (req.query.url || req.body.url);
         cleanedPost = await postlight.parse(_url);
         cleanedPost.id = uuid.v4();
+        cleanedPost.url = _url;
 
         // Add partition key and row key for Azure Table Storage
         var today = new Date();
